@@ -1,0 +1,31 @@
+{
+  "short_name": "TailingsIQ",
+  "name": "TailingsIQ - AI for Tailings Management",
+  "description": "AI-Enhanced Tailings Storage Facility Management Platform",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#006039",
+  "background_color": "#006039",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "utilities", "business"],
+  "lang": "en",
+  "scope": "/",
+  "prefer_related_applications": false
+}

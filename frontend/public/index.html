@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#006039" />
+    <meta
+      name="description"
+      content="TailingsIQ - AI-Enhanced Tailings Storage Facility Management Platform"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Roboto Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+
+    <!-- Material Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <!-- Preconnect to improve loading performance -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>TailingsIQ - AI for Tailings Management</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="tailings, TSF, management, AI, mining, compliance, monitoring" />
+    <meta name="author" content="TailingsIQ Team" />
+    <meta property="og:title" content="TailingsIQ - AI for Tailings Management" />
+    <meta property="og:description" content="Revolutionize how you manage risks, monitor performance, and ensure compliance with industry standards" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tailingsiq.com" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+
+    <!-- Disable browser autocomplete for sensitive data -->
+    <meta name="autocomplete" content="off" />
+  </head>
+  <body>
+    <noscript>
+      <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+      ">
+        <div>
+          <h1 style="color: #006039; margin-bottom: 20px;">TailingsIQ</h1>
+          <p style="color: #666; font-size: 18px; margin-bottom: 20px;">
+            You need to enable JavaScript to run this application.
+          </p>
+          <p style="color: #999; font-size: 14px;">
+            TailingsIQ requires JavaScript for its AI-powered features and interactive dashboard.
+          </p>
+        </div>
+      </div>
+    </noscript>
+
+    <!-- Loading indicator -->
+    <div id="loading-indicator" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #006039;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: white;
+      font-family: Arial, sans-serif;
+    ">
+      <div style="text-align: center;">
+        <div style="
+          width: 50px;
+          height: 50px;
+          border: 3px solid rgba(255,255,255,0.3);
+          border-top: 3px solid #d4af37;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin: 0 auto 20px;
+        "></div>
+        <h2 style="margin: 0; font-weight: 300; letter-spacing: 2px;">TailingsIQ</h2>
+        <p style="margin: 10px 0 0; opacity: 0.8; font-size: 14px;">Loading AI-Enhanced TSF Management...</p>
+      </div>
+    </div>
+
+    <style>
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #f8f9fa;
+      }
+
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+      }
+
+      /* Hide loading indicator once React loads */
+      #root:not(:empty) + #loading-indicator {
+        display: none;
+      }
+    </style>
+
+    <div id="root"></div>
+
+    <script>
+      // Hide loading indicator when React app loads
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loadingIndicator = document.getElementById('loading-indicator');
+          if (loadingIndicator) {
+            loadingIndicator.style.display = 'none';
+          }
+        }, 100);
+      });
+
+      // Service Worker registration for PWA capabilities
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
